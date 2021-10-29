@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>
+        const exchange = () => {
+            const isActive = document.getElementById("count_down").innerText
+            if(isActive == ""||isActive=="00:00"){
+                const temp = String(Math.floor(Math.random()*1000000)).padStart(6,0)
+                document.getElementById("input_text").value= temp
+                let time=179
+                setInterval(
+                    function(){
+                        const minute = String(Math.floor(time / 60)).padStart(2, 0)
+                        const second = String(time % 60).padStart(2, 0)
+                        if(time>=0){
+                            document.getElementById("count_down").innerText = minute + ":" + second
+                            --time
+                        }
+                
+                    }
+                    ,1000
+                )
+            }
+        }
+    </script>
+    <title>인증번호</title>
+</head>
+<body>
+    <input type="text" id="input_text" value="" placeholder="000000" 
+        style="background-color: white; width: 60px; border: none; font-size: 15px;" disabled/>
+    <button style="border-radius: 3px; background-color: whitesmoke; border-width: 1px; border-color: grey;"
+    onclick="exchange()">인증번호 전송</button>  
+    <div id="count_down"></div>
+</body>
+</html>

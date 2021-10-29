@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>포커스 맞추기</title>
+    <script>
+
+        function changePhone1(){
+            let i=2
+            const phone1 = document.getElementById("phone1").value
+            if(phone1.length === i+1){
+                document.getElementById("phone"+i).focus()
+                i++
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="phone1" type="text" size="1" maxlength="3" oninput="changePhone1()"/> 
+    - <input id="phone2" type="text" size="3" maxlength="4" oninput="changePhone1()"/> 
+    - <input id="phone3" type="text" size="3" maxlength="4" oninput="changePhone1()"/>
+</body>
+</html>

@@ -1,0 +1,10 @@
+input{
+    background-color: yellow;
+
+}
+.input_class{
+    background-color: skyblue;
+}
+#input_id{
+    background-color: orange;
+}
